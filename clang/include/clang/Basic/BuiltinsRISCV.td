@@ -151,3 +151,12 @@ def ntl_store : RISCVBuiltin<"void(...)">;
 // XCV extensions.
 //===----------------------------------------------------------------------===//
 include "clang/Basic/BuiltinsRISCVXCV.td"
+
+//===----------------------------------------------------------------------===//
+// Xyz extension.
+//===----------------------------------------------------------------------===//
+
+// TODO: mv to single td file
+let Features = "xxyz" in {
+  def xyz_nop : RISCVBuiltin<"void()">;
+}

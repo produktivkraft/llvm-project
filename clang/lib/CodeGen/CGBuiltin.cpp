@@ -23648,6 +23648,13 @@ Value *CodeGenFunction::EmitRISCVBuiltinExpr(unsigned BuiltinID,
     ID = Intrinsic::riscv_cv_alu_subuRN;
     break;
 
+  // TODO: mv to single file
+  case RISCV::BI__builtin_riscv_xyz_nop: {
+    Function *F = CGM.getIntrinsic(Intrinsic::riscv_xyz_nop, {});
+    Value *Result = Builder.CreateCall(F, {});
+    return Result;
+  }
+
     // Vector builtins are handled from here.
 #include "clang/Basic/riscv_vector_builtin_cg.inc"
 

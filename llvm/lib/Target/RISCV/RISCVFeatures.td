@@ -1398,6 +1398,14 @@ def HasVendorXRivosVizip
       AssemblerPredicate<(all_of FeatureVendorXRivosVizip),
                          "'XRivosVizip' (Rivos Vector Register Zips)">;
 
+// Xyz Extension(s)
+
+def FeatureVendorXXyz
+    : RISCVExtension<1, 0, "Xxyz">;
+def HasVendorXXyz
+    : Predicate<"Subtarget->hasVendorXXyz()">,
+      AssemblerPredicate<(all_of FeatureVendorXXyz), "Xyz">;
+
 //===----------------------------------------------------------------------===//
 // LLVM specific features and extensions
 //===----------------------------------------------------------------------===//

@@ -720,6 +720,8 @@ DecodeStatus RISCVDisassembler::getInstruction32(MCInst &MI, uint64_t &Size,
 
   TRY_TO_DECODE_FEATURE_ANY(XRivosFeatureGroup, DecoderTableXRivos32, "Rivos");
 
+  TRY_TO_DECODE_FEATURE(RISCV::FeatureVendorXXyz, DecoderTableXXyz32, "Xyz");
+
   TRY_TO_DECODE(true, DecoderTable32, "RISCV32");
 
   return MCDisassembler::Fail;
